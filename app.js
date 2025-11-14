@@ -8,7 +8,7 @@
 
 
 const math = require('./math');             // importing the object from the math.js file
-console.log(math);                        // logging the imported object
+console.log(math);
 
 // console.log("Sum: " + math.sum(5, 3));          // using the functions from the imported object
 // console.log("Multiply: " + math.multiply(5, 3));

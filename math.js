@@ -1,6 +1,6 @@
 
 
-module.exports = 222;        // exporting a number
+// module.exports = 222;        // exporting a number
 
 //1st way to export the functions as an object
 
@@ -24,4 +24,8 @@ module.exports = 222;        // exporting a number
 // module.exports.sum = (a, b) => a + b;
 // module.exports.multiply = (a, b) => a * b;
 // exports.subtract = (a, b) => a - b;          // we can export using exports keyword as well
+
+
+// If we create a folder where have multiple files and we want to export all the files from that folder we use index.js file, so we can export all the files from that folder using index.js file. 
+
 
