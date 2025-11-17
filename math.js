@@ -30,6 +30,6 @@
 
 
 export const sum = (a, b) => a + b;             // exporting individual functions
-const multiply = (a, b) => a * b;
-const subtract = (a, b) => a - b;
+export const multiply = (a, b) => a * b;          
+export const subtract = (a, b) => a - b;
 

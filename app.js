@@ -17,4 +17,14 @@
 
 // we can also import specific functions from the object like this
 
-import { sum, multiply, subtract } from './math.js';      // importing specific functions from the math.js file
+// import { sum, multiply, subtract } from './math.js';      // importing specific functions from the math.js file
+
+// console.log("Sum: " + sum(5, 3));          // using the imported functions
+// console.log("Multiply: " + multiply(5, 3));
+// console.log("Subtract: " + subtract(5, 3));
+
+
+import {generate,  count} from 'random-words';          // importing the random-words package
+
+console.log(generate(5));               // generating 5 random words
+console.log(count);                    // printing the count of words generated

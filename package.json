@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalPandatt/Backend.git"
+  },
+  "author": "Vishal Vashishth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishalPandatt/Backend/issues"
+  },
+  "homepage": "https://github.com/vishalPandatt/Backend#readme",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "random-words": "^2.0.1"
+  }
+}
