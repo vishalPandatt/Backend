@@ -24,18 +24,27 @@ app.get('/',  (req , res) =>{                          // handling GET request t
     res.send('Hello, You contected root path');
 });
 
-app.get('/search',  (req , res) =>{ 
-    console.log('Request received at search path');
-    res.send('Hello, You contected search path');
-});
+// app.get('/search',  (req , res) =>{ 
+//     console.log('Request received at search path');
+//     res.send('Hello, You contected search path');
+// });
 
-app.get('/help',  (req , res) =>{
-    console.log('Request received at help path');
-    res.send('Hello, You contected help path');
-});
+// app.get('/help',  (req , res) =>{
+//     console.log('Request received at help path');
+//     res.send('Hello, You contected help path');
+// });
 
 //handling 404 error page
-app.use((req, res) => {
-  res.status(404).send("Page Not Found");
-});
+// app.use((req, res) => {
+//   res.status(404).send("Page Not Found");           //status method to set HTTP status code
+// });
 
+// app.post('/', (req, res) => {                               // handling POST request to root URL
+//     console.log('POST request received at root path');  
+//     res.send('Hello, You sent a POST request to root path');
+// });
+
+app.get('/:username/:id',(req, res)=>{           // route parameters
+    console.log('username:', req.params, 'id:', req.params);    // Accessing route parameters
+    res.send(`Hello, ${req.params.username}! your profile page.and your id is ${req.params.id}`);
+});
