@@ -44,7 +44,15 @@ app.get('/',  (req , res) =>{                          // handling GET request t
 //     res.send('Hello, You sent a POST request to root path');
 // });
 
-app.get('/:username/:id',(req, res)=>{           // route parameters
-    console.log('username:', req.params, 'id:', req.params);    // Accessing route parameters
-    res.send(`Hello, ${req.params.username}! your profile page.and your id is ${req.params.id}`);
+// app.get('/:username/:id',(req, res)=>{           // route parameters
+//     console.log('username:', req.params, 'id:', req.params);    // Accessing route parameters
+//     res.send(`welcome, ${req.params.username}! your profile page.and your id is ${req.params.id}`);
+// });
+
+
+        //Query Strings 
+
+app.get('/search', (req, res) => {
+    console.log('Query parameters:', req.query);
+    res.send(`You searched for: ${req.query.q}`);
 });
