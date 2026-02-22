@@ -45,7 +45,7 @@ const app = express();
 app.get('/', (req, res) => {
     res.send("<h1>Home Page</h1>" + `Hello, ${req.query.name || "Guest"}!`);
 });
-
+    
 app.get('/about', (req, res) => {
     res.send("<h1>About Page</h1>");
 });
