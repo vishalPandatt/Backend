@@ -72,19 +72,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-// 🔹 Helper: read users from file
 const getUsers = () => {
     const data = fs.readFileSync(filePath, "utf-8");
     return JSON.parse(data);
 };
 
-// 🔹 Helper: save users to file
 const saveUsers = (users) => {
     fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 };
 
 
-// ✅ GET all users
 app.get("/api/users", (req, res) => {
     res.setHeader("Vishal", "Vashishth");
     console.log(req.header);
@@ -93,7 +90,6 @@ app.get("/api/users", (req, res) => {
 });
 
 
-// ✅ HTML route (unchanged)
 app.get("/users", (req, res) => {
     const users = getUsers();
 
@@ -106,7 +102,6 @@ app.get("/users", (req, res) => {
 });
 
 
-// ✅ GET user by id
 app.get("/api/users/:id", (req, res) => {
     const users = getUsers();
     const id = Number(req.params.id);
@@ -116,7 +111,6 @@ app.get("/api/users/:id", (req, res) => {
 });
 
 
-// ✅ POST new user → updates JSON file
 app.post("/api/users", (req, res) => {
     const users = getUsers();
     const newUser = req.body;
@@ -125,15 +119,15 @@ app.post("/api/users", (req, res) => {
 
     users.push(newUser);
     saveUsers(users);
+    
 
-    return res.json({
+    return res.status(201).json({
         message: "User added successfully",
         user: newUser
     });
 });
 
 
-// ✅ DELETE user
 app.delete("/api/users/:id", (req, res) => {
     let users = getUsers();
     const id = Number(req.params.id);
