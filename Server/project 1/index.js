@@ -59,93 +59,95 @@
 // Chat GPT Code ==
 
 
-// const express = require('express');
-// const fs = require('fs');
-// const path = require('path');
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
 
-// const app = express();
-// const PORT = 8000;
+const app = express();
+const PORT = 8000;
 
-// const filePath = path.join(__dirname, "MOCK_DATA.json");
+const filePath = path.join(__dirname, "MOCK_DATA.json");
 
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
-
-
-// // 🔹 Helper: read users from file
-// const getUsers = () => {
-//     const data = fs.readFileSync(filePath, "utf-8");
-//     return JSON.parse(data);
-// };
-
-// // 🔹 Helper: save users to file
-// const saveUsers = (users) => {
-//     fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
-// };
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 
-// // ✅ GET all users
-// app.get("/api/users", (req, res) => {
-//     const users = getUsers();
-//     return res.json(users);
-// });
+// 🔹 Helper: read users from file
+const getUsers = () => {
+    const data = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(data);
+};
+
+// 🔹 Helper: save users to file
+const saveUsers = (users) => {
+    fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+};
 
 
-// // ✅ HTML route (unchanged)
-// app.get("/users", (req, res) => {
-//     const users = getUsers();
-
-//     const HTML = `
-//     <ul>
-//     ${users.map(user => `<li>${user.first_name}</li>`).join("")}
-//     </ul>`;
-
-//     res.send(HTML);
-// });
+// ✅ GET all users
+app.get("/api/users", (req, res) => {
+    res.setHeader("Vishal", "Vashishth");
+    console.log(req.header);
+    const users = getUsers();
+    return res.json(users);
+});
 
 
-// // ✅ GET user by id
-// app.get("/api/users/:id", (req, res) => {
-//     const users = getUsers();
-//     const id = Number(req.params.id);
-//     const user = users.find(u => u.id === id);
+// ✅ HTML route (unchanged)
+app.get("/users", (req, res) => {
+    const users = getUsers();
 
-//     return res.json(user);
-// });
+    const HTML = `
+    <ul>
+    ${users.map(user => `<li>${user.first_name}</li>`).join("")}
+    </ul>`;
 
-
-// // ✅ POST new user → updates JSON file
-// app.post("/api/users", (req, res) => {
-//     const users = getUsers();
-//     const newUser = req.body;
-
-//     newUser.id = users.length ? users[users.length - 1].id + 1 : 1;
-
-//     users.push(newUser);
-//     saveUsers(users);
-
-//     return res.json({
-//         message: "User added successfully",
-//         user: newUser
-//     });
-// });
+    res.send(HTML);
+});
 
 
-// // ✅ DELETE user
-// app.delete("/api/users/:id", (req, res) => {
-//     let users = getUsers();
-//     const id = Number(req.params.id);
+// ✅ GET user by id
+app.get("/api/users/:id", (req, res) => {
+    const users = getUsers();
+    const id = Number(req.params.id);
+    const user = users.find(u => u.id === id);
 
-//     users = users.filter(u => u.id !== id);
-//     saveUsers(users);
-
-//     return res.json({ message: "User deleted" });
-// });
+    return res.json(user);
+});
 
 
-// app.listen(PORT, () => {
-//     console.log(`Server running on port ${PORT}`);
-// });
+// ✅ POST new user → updates JSON file
+app.post("/api/users", (req, res) => {
+    const users = getUsers();
+    const newUser = req.body;
+
+    newUser.id = users.length ? users[users.length - 1].id + 1 : 1;
+
+    users.push(newUser);
+    saveUsers(users);
+
+    return res.json({
+        message: "User added successfully",
+        user: newUser
+    });
+});
+
+
+// ✅ DELETE user
+app.delete("/api/users/:id", (req, res) => {
+    let users = getUsers();
+    const id = Number(req.params.id);
+
+    users = users.filter(u => u.id !== id);
+    saveUsers(users);
+
+    return res.json({ message: "User deleted" });
+});
+
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 
 
