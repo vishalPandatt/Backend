@@ -62,8 +62,9 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-
+const mongoos = require('mongoos')
 const app = express();
+
 const PORT = 8000;
 
 const filePath = path.join(__dirname, "MOCK_DATA.json");
@@ -135,9 +136,9 @@ app.delete("/api/users/:id", (req, res) => {
     users = users.filter(u => u.id !== id);
     saveUsers(users);
 
-    return res.json({ message: "User deleted" });
+    return res.json({ message: "User deleted" }); 
 });
-
+    
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
