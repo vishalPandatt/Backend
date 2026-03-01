@@ -33,7 +33,11 @@
 // //     return res.json({Status: "panding"});
 // // });
 
+
+
 // // we use /api/users/:id in three requests insted of three requests we can create a route and use three requests at once
+
+
 
 // app.route("/api/users/:id")
 // .get((req, res) => {
