@@ -39,23 +39,23 @@
 
 
 
-// app.route("/api/users/:id")
-// .get((req, res) => {
-//     const id = Number(req.params.id);
-//     const user = users.find(user => user.id === id);
-//     return res.json(user);
-// })
-// .post((req, res) => {
-//     const body = req.body;
-//     return res.json({ status: "pending" });
-// })
-// .delete((req, res) => {
-//     return res.json({ status: "pending" });
-// });
+app.route("/api/users/:id")
+.get((req, res) => {
+    const id = Number(req.params.id);
+    const user = users.find(user => user.id === id);
+    return res.json(user);
+})
+.post((req, res) => {
+    const body = req.body;
+    return res.json({ status: "pending" });
+})
+.delete((req, res) => {
+    return res.json({ status: "pending" });
+});
 
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`);
-// });
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
 
 
