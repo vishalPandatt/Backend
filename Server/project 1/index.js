@@ -39,23 +39,23 @@
 
 
 
-app.route("/api/users/:id")
-.get((req, res) => {
-    const id = Number(req.params.id);
-    const user = users.find(user => user.id === id);
-    return res.json(user);
-})
-.post((req, res) => {
-    const body = req.body;
-    return res.json({ status: "pending" });
-})
-.delete((req, res) => {
-    return res.json({ status: "pending" });
-});
+// app.route("/api/users/:id")
+// .get((req, res) => {
+//     const id = Number(req.params.id);
+//     const user = users.find(user => user.id === id);
+//     return res.json(user);
+// })
+// .post((req, res) => {
+//     const body = req.body;
+//     return res.json({ status: "pending" });
+// })
+// .delete((req, res) => {
+//     return res.json({ status: "pending" });
+// });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`);
+// });
 
 
 
@@ -66,7 +66,8 @@ app.listen(PORT, () => {
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const mongoos = require('mongoos')
+const mongoos = require('mongoos');
+const { type } = require('os');
 const app = express();
 
 const PORT = 8000;
@@ -75,6 +76,27 @@ const filePath = path.join(__dirname, "MOCK_DATA.json");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+const userSchema = new mongoos.Schema({
+    first_name:{
+        type: String,
+        required: true
+    },
+    last_name:{
+        type: String,
+    },
+    email:{
+        type: String,
+        require: true,
+        unique: true,
+    },
+    jobTittle:{
+        type: String,
+    },
+    gender:{
+        type: String,
+    }
+});
 
 
 const getUsers = () => {
