@@ -77,6 +77,10 @@ const filePath = path.join(__dirname, "MOCK_DATA.json");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+mongoos.connect("mongodb://127.0.0.1:27017/youtube")
+.then(()=>console.log("mongoDB Connect"))
+.catch(()=>console.log("MongoDB Error"));
+
 const userSchema = new mongoos.Schema({
     first_name:{
         type: String,
@@ -98,6 +102,8 @@ const userSchema = new mongoos.Schema({
     }
 });
 
+
+const user = mongoos.model('user', userSchema);
 
 const getUsers = () => {
     const data = fs.readFileSync(filePath, "utf-8");
