@@ -18,6 +18,7 @@
   "description": "",
   "type": "module",
   "dependencies": {
+    "nodemon": "^3.1.14",
     "random-words": "^2.0.1"
   }
 }
