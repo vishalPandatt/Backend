@@ -3,6 +3,8 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res)=>{
     res.cookie("name", "John Doe", { maxAge: 900000, httpOnly: true });
