@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>All Posts</h1>
+
+    <% posts.forEach(post => { %>
+        <div class="post">
+            <h3 class="user"><%= post.username %></h3>
+            <p class="content"><%= post.content %></p>
+        </div>
+        <hr>
+    <% }) %>
+</body>
+</html>
