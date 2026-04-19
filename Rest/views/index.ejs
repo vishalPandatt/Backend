@@ -11,6 +11,12 @@
         <div class="post">
             <h3 class="user"><%= post.username %></h3>
             <p class="content"><%= post.content %></p>
+            <br>
+            <a href="http://localhost:3000/posts/<%= post.id %>">View Details</a>
+            <a href="http://localhost:3000/posts/<%= post.id %>/edit">Edit</a>
+            <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" style="display: inline;">
+                <button>Delete Post</button>
+            </form>
         </div>
         <hr>
     <% }) %>
