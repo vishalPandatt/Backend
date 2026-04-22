@@ -1,4 +1,4 @@
-REST API means: Reprasentational State Transfer application programming interface
+<!-- REST API means: Reprasentational State Transfer application programming interface
 
 REST API : REST API is set of rules that allow two different software to communicate over the internet. We can perform CRUD operation using restapis.
 
@@ -11,4 +11,4 @@ DELETE: Remove data
 
 Redirect : res.redirect(URL) this is help to drived a specific path, with specific status. it contain 302 code by defalt.
 
-UUID Package: Universally unique identifier : that create automatically unique id in string 
+UUID Package: Universally unique identifier : that create automatically unique id in string  -->
