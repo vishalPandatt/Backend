@@ -1,0 +1,12 @@
+{
+  "name": "data-asociation",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "vishal",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
