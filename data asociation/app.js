@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cookie-parser());
 
 app.get('/', (req, res) =>{
-    res.send('Hello World');
+    res.render('index');
 });
 
 app.listen(8080, () =>{});
