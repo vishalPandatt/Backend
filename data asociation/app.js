@@ -23,8 +23,8 @@ app.post('/register', async (req, res) => {
         return res.status(400).send('User already exists');
     }
 
-    const salt = await bcrypt.genSalt(10);          // ✅
-    const hashedPassword = await bcrypt.hash(password, salt);  // ✅
+    const salt = await bcrypt.genSalt(10);          
+    const hashedPassword = await bcrypt.hash(password, salt);  
     console.log(hashedPassword);
 
     const newUser = await userModel.create({
@@ -32,7 +32,10 @@ app.post('/register', async (req, res) => {
         name,
         age,
         email,
-        password: hashedPassword
+        password: hashedPassword,
+        posts: [
+            {type: mongoose.Schema.Types.ObjectId, ref: 'Post'}
+        ]
     });
 
     res.send('User registered successfully');
