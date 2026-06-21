@@ -1,0 +1,26 @@
+node and express: node is main thing but with the help of express we write code to create server, we also dertermine how the server will react.
+
+
+Express : package, fremework, perform routing, reqest and response handling.
+
+
+Why Express?
+Http is difficult to use, express makes this easier.
+
+
+Routing : process of creating routers. Ex of routers : /user, /home 
+
+
+MiddleWare: it is a function which runs before the routers.that's means saare routers mey koi bhi chale uasase pahle MiddleWare chalta h, isme likha code phle execute hota h. 
+node ke sath ek dikkat h agar control ek bar kisi MiddleWare par aaya toh khud se agle route/MiddleWare par nahi jayeg, agle par jane ke liye use push krna padega or ye push next ko chalana kahlayega
+You can create multiple MiddleWares.
+
+
+Request, Response and Next:
+req me sara data hota h aane wale user ki request ki taraf ka, jaishe ki lucation, device info and others.
+Res mey controls hote h jinke basis pe hum server se response bhej pate h.
+Next responsible for push control from one MiddleWare to another.
+
+
+Route Parameters:
+aisha koi bhi route jiska koi bhi hissa bar bar same rahta h or kuch hissa bar bar change hota h iske liye aap dynamic route bna skte h.make route dynamic you can use : att the place you want to make it dynamic Ex: /profile/:userName
