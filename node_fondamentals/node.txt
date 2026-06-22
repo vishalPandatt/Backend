@@ -28,6 +28,11 @@ for acssesing their value use req.params.
 
 
 Template engine: - EJS
-html calculation nhi kar skta. Ex: 1+2, html print it on console 1+2 but EJS proform operation and print 3. So EJS is html with superpower.
+So EJS is html with superpower.
 EJS setup: => EJS install => configure ejs: app.set("view engine", "ejs")  => ek views folder banao   => views folder mey ejs files banao  => send ki jagah render karo
 render : render krte samay make sure aap views wale folder ki andar wali file ka name hi likhe. or usme .ejs mention naa karen.
+
+
+Static files: 
+images, stylesheet, frontend js setup karna
+process of setup static => create a folder called public => created three folders inside it images, stylesheet and javascripts => configure the express static in script.js file => understand the path.

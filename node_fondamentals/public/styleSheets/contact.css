@@ -1,0 +1,102 @@
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 56px 48px;
+    text-align: center;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+  }
+
+  h1 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    opacity: 0.8;
+  }
+
+  .controls {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 14px 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  .btn:active { transform: scale(0.96); }
+
+  .btn-snow {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    color: #1a2a4a;
+    box-shadow: 0 4px 20px rgba(200, 220, 255, 0.25);
+  }
+  .btn-snow:hover {
+    box-shadow: 0 6px 28px rgba(200, 220, 255, 0.45);
+    transform: translateY(-2px);
+  }
+
+  .btn-balloons {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(245, 87, 108, 0.3);
+  }
+  .btn-balloons:hover {
+    box-shadow: 0 6px 28px rgba(245, 87, 108, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  #canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .status {
+    margin-top: 32px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    min-height: 20px;
+    transition: opacity 0.3s;
+  }
