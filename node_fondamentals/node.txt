@@ -24,3 +24,10 @@ Next responsible for push control from one MiddleWare to another.
 
 Route Parameters:
 aisha koi bhi route jiska koi bhi hissa bar bar same rahta h or kuch hissa bar bar change hota h iske liye aap dynamic route bna skte h.make route dynamic you can use : att the place you want to make it dynamic Ex: /profile/:userName
+for acssesing their value use req.params.
+
+
+Template engine: - EJS
+html calculation nhi kar skta. Ex: 1+2, html print it on console 1+2 but EJS proform operation and print 3. So EJS is html with superpower.
+EJS setup: => EJS install => configure ejs: app.set("view engine", "ejs")  => ek views folder banao   => views folder mey ejs files banao  => send ki jagah render karo
+render : render krte samay make sure aap views wale folder ki andar wali file ka name hi likhe. or usme .ejs mention naa karen.

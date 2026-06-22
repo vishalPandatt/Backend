@@ -18,7 +18,9 @@ app.get('/profile', (req,res) =>{
 app.get('/profile/:username', (req,res) =>{
     res.send(`Welcome to the profile page username: ${req.params.username}`);
 });
-
+app.get("/contact", (req, res)=>{
+    res.render("contact");
+})
 
 app.listen(8000, ()=>{
     console.log("server is running on port 8000")
