@@ -13,5 +13,6 @@
     "ejs": "^6.0.1",
     "express": "^5.2.1",
     "mongoose": "^9.7.2"
-  }
+  },
+  "devDependencies": {}
 }

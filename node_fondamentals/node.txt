@@ -1,3 +1,25 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 node and express: node is main thing but with the help of express we write code to create server, we also dertermine how the server will react.
 
 
@@ -36,3 +58,6 @@ render : render krte samay make sure aap views wale folder ki andar wali file ka
 Static files: 
 images, stylesheet, frontend js setup karna
 process of setup static => create a folder called public => created three folders inside it images, stylesheet and javascripts => configure the express static in script.js file => understand the path.
+
+
+Error handling: 
