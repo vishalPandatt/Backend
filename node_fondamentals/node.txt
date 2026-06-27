@@ -61,3 +61,12 @@ process of setup static => create a folder called public => created three folder
 
 
 Error handling: 
+
+
+Express generator : Ek folder bna ke deta h, jisme express ki saari files ek folder mey dal deta h. Steps: npm i express-generator  (we can install it globally with write "-g" at the end)
+=> to create new app anywhere
+=> open cmd move to desktop
+=> create new app
+=> express appname --view=ejs
+=> now use these two command - cd appname, npm i
+=> open it on vscode
