@@ -70,3 +70,16 @@ Express generator : Ek folder bna ke deta h, jisme express ki saari files ek fol
 => express appname --view=ejs
 => now use these two command - cd appname, npm i
 => open it on vscode
+
+Things that change after express-generator: app.get ki jagah --> router.get, npx nodemon filename ki jagah --> npx nodemon. 
+
+
+MongooDB:  whole database => iske andar "collections" (user, admin, product) => collection ke andar ka koi ek verity "document" or collections banane mey jo code likha voh "model".
+
+SetUp: 
+    install mongodb
+     => install mongoosejs 
+     => require connection (const = mongoose = require("mongoose"))
+     => setup connection (mongoose.connect(mongodb://127.0.0.1:27017))
+     => make schema 
+     => create model and export
