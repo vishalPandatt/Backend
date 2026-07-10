@@ -83,3 +83,11 @@ SetUp:
      => setup connection (mongoose.connect(mongodb://127.0.0.1:27017))
      => make schema 
      => create model and export
+
+
+
+session - npm i express-session
+-- resave: "false "  => agar session ki value change na hui ho toh save mat krna.
+-- saveUninitialized: "false" => server par aisha koi data jo iniclized nahi h use bhi save nhi karna.
+-- secret: "kuchbhi" => secret pin jisase data encript kiya jaye.
+
