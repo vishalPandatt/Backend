@@ -79,7 +79,7 @@ MongooDB:  whole database => iske andar "collections" (user, admin, product) => 
 SetUp: 
     install mongodb
      => install mongoosejs 
-     => require connection (const = mongoose = require("mongoose"))
+     => require connection (const mongoose = require("mongoose"))
      => setup connection (mongoose.connect(mongodb://127.0.0.1:27017))
      => make schema 
      => create model and export
@@ -90,4 +90,28 @@ session - npm i express-session
 -- resave: "false "  => agar session ki value change na hui ho toh save mat krna.
 -- saveUninitialized: "false" => server par aisha koi data jo iniclized nahi h use bhi save nhi karna.
 -- secret: "kuchbhi" => secret pin jisase data encript kiya jaye.
+
+Creating a session : 
+req.session.koi_Bhi_name = Koi_Bhi_Value
+
+Reading a session :
+req.session.koi_Bhi_name
+
+Delete a session:
+req.session.destroy()
+
+
+Cookies : 
+-- npm i cookie-parser   
+=> require cookie =>   var cookieParser = require('cookie-parser');  
+=> Setup cookie => app.use(cookieParser()); 
+
+Creating cookie:
+res.cookie("name_cookie", value_cookie );
+
+Reading cookie :
+req.cookies.name_cookie
+
+Delete Cookie :
+res.ClearCookie("name_cookie");
 
