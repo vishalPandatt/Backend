@@ -115,3 +115,4 @@ req.cookies.name_cookie
 Delete Cookie :
 res.ClearCookie("name_cookie");
 
+Flash :  jab bhi hame ejs mey koi
