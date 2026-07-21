@@ -115,4 +115,12 @@ req.cookies.name_cookie
 Delete Cookie :
 res.ClearCookie("name_cookie");
 
-Flash :  jab bhi hame ejs mey koi
+Flash :  Connect-flash is a popular middleware for Node.js. It allows developers to store temporary, one-time notification messages (like success, error, or warning alerts) in the user's session so they can be displayed on the next redirected page and then immediately cleared.
+
+Steps: 
+=>  npm i connet-flash
+=> make sure to setup express-session
+=>  make sure you put connect flash in app.use function
+=> kishi bhi route mey flash create krna h toh kishi dusre route mey use chalane ka try karen.
+=> bina express session ke flash ko use nahi kar sakte.
+
