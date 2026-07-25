@@ -124,3 +124,7 @@ Steps:
 => kishi bhi route mey flash create krna h toh kishi dusre route mey use chalane ka try karen.
 => bina express session ke flash ko use nahi kar sakte.
 
+ 
+
+
+ Data association: ek model se dusre model ke data ko jod dena. 
