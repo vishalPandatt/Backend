@@ -9,6 +9,7 @@
   "author": "Vishal Vashishth",
   "license": "ISC",
   "dependencies": {
-    "give-me-a-joke": "^0.5.1"
+    "give-me-a-joke": "^0.5.1",
+    "mongoose": "^9.9.1"
   }
 }
