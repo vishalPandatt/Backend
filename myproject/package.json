@@ -13,6 +13,7 @@
     "ejs": "^6.0.1",
     "express": "^5.2.1",
     "give-me-a-joke": "^0.5.1",
-    "mongoose": "^9.9.1"
+    "mongoose": "^9.9.1",
+    "session": "^0.1.0"
   }
 }
