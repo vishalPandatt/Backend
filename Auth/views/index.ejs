@@ -8,6 +8,13 @@
 
 </head>
 <body>
-    <h1 class="bg-blue-500 text-white p-4">Welcome to the App</h1>
+    <div class="w-full h-screen bg-zinc-900 text-white p-10">
+        <h3 class="text-xl font-bold mb-5">Create User</h3>
+        <form method = "post" action="/create">
+            <input Class = px-3 py-2 rounded-md bg transparent border-2 border-zinc-800 outline-none type="text" name="email" placeholder="Email">
+            <input Class = px-3 py-2 rounded-md bg transparent border-2 border-zinc-800 outline-none type="password" name="password" placeholder="Password">
+            <button class="bg-blue-500 text-white py-2 px-4 rounded-md mt-5">Create User</button>
+        </form>
+    </div>
 </body>
 </html>
