@@ -15,14 +15,14 @@ const bcrypt = require("bcrypt");
 // });
 
 
-app.get('/', (req, res) => {
-    console.log(req.cookies);
-    bcrypt.genSalt(10, function(err, salt) {
-    bcrypt.hash("mypassword", salt, function(err, hash) {
-        console.log(hash);
-    });
-});
-});
+// app.get('/', (req, res) => {
+//     console.log(req.cookies);
+//     bcrypt.genSalt(10, function(err, salt) {
+//     bcrypt.hash("mypassword", salt, function(err, hash) {
+//         console.log(hash);
+//     });
+// });
+// });
 
 
 app.listen(3000);
