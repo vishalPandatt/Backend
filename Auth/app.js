@@ -3,7 +3,7 @@ const app = express();
 const bcrypt = require("bcrypt");
 const path = require("path");
 const cookieParser = require("cookie-parser");
-
+const userModel = require("./models/users");
 app.set("view engine", "ejs");
 
 app.use(express.json());
