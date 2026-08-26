@@ -17,32 +17,20 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
-app.post("/create", async (req, res) => {
-    try {
-        const { email, password } = req.body;
+app.post("/create", (req, res) => {
+    let {email, password} = req.body;
 
-        // Generate salt
-        const salt = await bcrypt.genSalt(10);
-
-        // Hash password
-        const hash = await bcrypt.hash(password, salt);
-
-        console.log(hash);
-
-        // Create user with hashed password
-        const createdUser = await userModel.create({
-            email,
+    bcrypt.genSalt(10, (err, salt) =>{
+        bcrypt.hash(password, salt, async (err, hash)=>{
+            let createdUser = await userModel.create({
+            email: email,
             password: hash
-        });
-
-        res.send(createdUser);
-
-    } catch (error) {
-        console.log(error);
-        res.status(500).send("Error creating user");
-    }
-    console.log(password);
-});
+          });
+            res.send(createdUser);
+            console.log(password);
+         });
+       });
+    });
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");
