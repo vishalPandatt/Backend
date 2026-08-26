@@ -29,7 +29,7 @@ app.post("/create", (req, res) => {
             res.send(createdUser);
             console.log(password);
          });
-       });
+       }); 
     });
 
 app.listen(3000, () => {
