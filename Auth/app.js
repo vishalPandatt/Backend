@@ -34,10 +34,17 @@ app.post("/create", (req, res) => {
        }); 
     });
 
-app.get("/login", async (req, res) =>{
+app.get("/login",function (req, res){
     res.render("login");
 });
 
+app.post("/login", async (req, res) =>{
+    let user = await userModel.findOne({email: req.body.email});
+    if(!user) return res.send("something went wrong");
+
+    console.log(user.password);
+
+});
 
 app.get("/logout", (req, res) => {
     res.clearCookie("token");
