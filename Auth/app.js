@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const userModel = require("./models/users");
+const jwt = require("jsonwebtoken");
 
 app.set("view engine", "ejs");
 
@@ -26,11 +27,22 @@ app.post("/create", (req, res) => {
             email: email,
             password: hash
           });
-            res.send(createdUser);
-            console.log(password);
+         let token = jwt.sign({email}, "secretkey");
+         res.cookie("token", token);
+            res.send({createdUser, token});
          });
        }); 
     });
+
+app.get("/login", async (req, res) =>{
+    res.render("login");
+});
+
+
+app.get("/logout", (req, res) => {
+    res.clearCookie("token");
+    res.redirect("/");
+});
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");
